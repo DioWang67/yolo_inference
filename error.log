@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "d:\Git\robotlearning\yolo_inference\main.py", line 203, in <module>
+    inference.run_inference()
+  File "d:\Git\robotlearning\yolo_inference\main.py", line 129, in run_inference
+    frame = cv2.resize(frame, self.config.imgsz)
+cv2.error: OpenCV(4.9.0) :-1: error: (-5:Bad argument) in function 'resize'
+> Overload resolution failed:
+>  - Can't parse 'dsize'. Expected sequence length 2, got 10
+>  - Can't parse 'dsize'. Expected sequence length 2, got 10
+

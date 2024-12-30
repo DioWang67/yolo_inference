@@ -1,0 +1,87 @@
+# 檢測模型的權重檔案路徑
+weights: "S:\\DioWang\\robotlearning\\yolo_inference_exe\\1203best.pt"
+
+
+# 運行設備（可以是 'cpu' 或 'cuda'）
+device: "cpu"
+
+# 信心閾值，用於篩選模型檢測結果（0 到 1）
+conf_thres: 0.85
+
+# IOU 閾值，用於篩選框的重疊程度（0 到 1）
+iou_thres: 0.45
+
+# 顏色匹配閾值，用於確定顏色是否匹配（0 到 1）
+color_match_threshold: 0.4
+
+# 圖像尺寸（寬度, 高度），用於輸入模型的圖像大小
+imgsz: [720, 720]
+
+
+width: 3072  # 設定解析度寬度3072
+height : 2048 # 設定解析度高度2048
+
+exposure_time: "20000"
+
+gain: "15.0"
+
+MV_CC_GetImageBuffer_nMsec: 10000
+
+timeout: 1
+
+use_hsv_detection: True 
+
+# 預期的顏色順序，從左到右的檢測順序
+expected_color_order:
+  - "Red"
+  - "Green"
+  - "Orange"
+  - "Yellow"
+  - "Black"
+  - "Black1"
+
+color_ranges:
+  Red:
+    hsv_range:
+      - lower: [0, 150, 50]
+        upper: [5, 255, 255]
+      - lower: [170, 150, 50]
+        upper: [180, 255, 255]
+    lab_range:
+      lower: [73, 158, 151]
+      upper: [115, 169, 159]
+  Green:
+    hsv_range:
+      - lower: [17, 15, 0]
+        upper: [119, 172, 150]
+    lab_range:
+      lower: [58, 116, 125]
+      upper: [84, 119, 127]
+  Orange:
+    hsv_range:
+      - lower: [5, 100, 100]
+        upper: [12, 255, 255]
+    lab_range:
+      lower: [88, 155, 157]
+      upper: [161, 162, 164]
+  Yellow:
+    hsv_range:
+      - lower: [18, 150, 213]
+        upper: [25, 201, 243]
+    lab_range:
+      lower: [174, 123, 183]
+      upper: [218, 141, 191]
+  Black:
+    hsv_range:
+      - lower: [0, 0, 0]
+        upper: [180, 255, 50]
+    lab_range:
+      lower: [13, 126, 126]
+      upper: [55, 128, 129]
+  Black1:
+    hsv_range:
+      - lower: [0, 0, 0]
+        upper: [180, 255, 50]
+    lab_range:
+      lower: [13, 126, 126]
+      upper: [55, 128, 129]
